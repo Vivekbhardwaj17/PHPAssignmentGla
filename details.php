@@ -25,23 +25,24 @@
   	  <input type="text" name="vmodal" >
   	</div>
 	  <div class="input-group">
-  	  <label>Last Service Date</label>
+  	  <label>Last Service Date (dd-mm-yyyy)</label>
   	  <input type="text" name="lsd">
   	</div>
+  	
   	<div class="input-group">
+  	  <label>Next Service Date (dd-mm-yyyy)</label>
+  	  <input type="text" name="nsd" >
+  	</div>
+	  <div class="input-group">
   	  <label>Driver Name</label>
   	  <input type="text" name="dname">
   	</div>
   	<div class="input-group">
-  	  <label>Next Service Date</label>
-  	  <input type="text" name="nsd" >
+  	  <button type="submit" class="btn" name="details_sub">Submit</button>&nbsp;&nbsp;&nbsp;&nbsp;
+		<button type ="logout" class ="btn" ><a href="login.php">LogOut</a></button>&nbsp;&nbsp;&nbsp;&nbsp;
+		<button type ="logout" class ="btn" ><a href="display.php">View Details</a></button>
   	</div>
-  	<div class="input-group">
-  	  <button type="submit" class="btn" name="details_sub">Submit</button>
-  	</div>
-  	<p>
-  		Click here to see all vehicle details <a href="display.php">View Detials</a>
-  	</p>
+  	
   </form>
 </body>
 

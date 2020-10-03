@@ -37,8 +37,12 @@
 
     <?php  if (isset($_SESSION['username'])) : ?>
     	<p>Welcome <strong><?php echo $_SESSION['username']; ?></strong></p><br>
-      <h2><a href="details.php" style="color: teal"><strong>Click here to Enter Details</strong></a></h2><br>
-    	<p> <a href="index.php?logout='1'" style="color: #5F9EA0;">logout</a> </p>
+      <button class ="btn"><a href="details.php" >Add new Details</a></button>
+	  <button class ="btn"><a href ="display.php">Show Details</a></button>
+	  <br>
+	  <br>
+	  <br>
+    	<p> <button class="btn"><a href="index.php?logout='1'" >logout</a></button> </p>
     <?php endif ?>
 </div>
 		

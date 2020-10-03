@@ -69,11 +69,18 @@ if(isset($_POST['details_sub'])){
 	$lsd = $_POST['lsd'];
     $dname=$_POST['dname'];
     $nsd = $_POST['nsd'];  
- 
- 
-    if($vnum!=""&$vcname!=""&$vmodal!=""&$lsd!=""&$dname!=""&$nsd!=""){
+    $que = "SELECT * FROM details WHERE vnum='$vnum'";
+    $result = mysqli_query($db, $que);
+    if (mysqli_num_rows($result) >0) 
+    echo"<font color='red'>Details Not Added! Allready existed.";
+   else if($vnum!=""&$vcname!=""&$vmodal!=""&$lsd!=""&$dname!=""&$nsd!=""){
+      
+     
         $quer="INSERT INTO details VALUES ('$vmodal','$vcname','$dname','$nsd','$vnum','$lsd')";
 mysqli_query($db,$quer);
+#$_SESSION['success'] = "Details Added Successfully";
+
+
     echo "<font color='green'>Details Added Successfully";}
     else 
     echo"<font color='red'>Details Not Added";
