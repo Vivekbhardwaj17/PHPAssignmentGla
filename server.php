@@ -4,6 +4,7 @@ session_start();
 // initializing variables
 $username = "";
 $email    = "";
+$dl ="";
 $errors = array(); 
 
 // connect to the database
@@ -14,6 +15,7 @@ if (isset($_POST['reg_user'])) {
   // receive all input values from the form
   $username = mysqli_real_escape_string($db, $_POST['username']);
   $email = mysqli_real_escape_string($db, $_POST['email']);
+  $dl = mysqli_real_escape_string($db,$_POST['dl']);
   $password_1 = mysqli_real_escape_string($db, $_POST['password_1']);
   $password_2 = mysqli_real_escape_string($db, $_POST['password_2']);
 
@@ -22,6 +24,7 @@ if (isset($_POST['reg_user'])) {
   if (empty($username)) { array_push($errors, "Username is required"); }
   if (empty($email)) { array_push($errors, "Email is required"); }
   if (empty($password_1)) { array_push($errors, "Password is required"); }
+  if (empty($dl)) { array_push($errors, "dl is required"); }
   if ($password_1 != $password_2) {
 	array_push($errors, "The two passwords do not match");
   }
@@ -37,8 +40,8 @@ if (isset($_POST['reg_user'])) {
       array_push($errors, "Username already exists");
     }
 
-    if ($user['email'] === $email) {
-      array_push($errors, "email already exists");
+    if ($user['dl'] === $dl) {
+      array_push($errors, "dl already exists");
     }
   }
 
@@ -47,8 +50,8 @@ if (isset($_POST['reg_user'])) {
   //	$password = md5($password_1);//encrypt the password before saving in the database
   $password = $password_1;
 
-  	$query = "INSERT INTO register (username, email, password) 
-  			  VALUES('$username', '$email', '$password')";
+  	$query = "INSERT INTO register (username, email,dl, password) 
+  			  VALUES('$username', '$email','$dl' '$password')";
   	mysqli_query($db, $query);
   	$_SESSION['username'] = $username;
   	$_SESSION['success'] = "You are now logged in";

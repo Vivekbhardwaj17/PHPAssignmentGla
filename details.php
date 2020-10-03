@@ -2,41 +2,41 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Register</title>
+  <title>Details</title>
   <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
   <div class="header">
-  	<h2>Register</h2>
+  	<h2>Details</h2>
   </div>
 	
   <form method="post" action="register.php">
   	<?php include('errors.php'); ?>
   	<div class="input-group">
-  	  <label>Username</label>
+  	  <label>Vehical Comapny Name/label>
   	  <input type="text" name="username" value="<?php echo $username; ?>">
   	</div>
   	<div class="input-group">
-  	  <label>Email</label>
+  	  <label>Vehical Model</label>
   	  <input type="email" name="email" value="<?php echo $email; ?>">
   	</div>
 	  <div class="input-group">
-  	  <label>Driving License No.</label>
+  	  <label>Last Service Date</label>
   	  <input type="dl" name="dl" value="<?php echo $dl; ?>">
   	</div>
   	<div class="input-group">
-  	  <label>Password</label>
+  	  <label>Driver Name</label>
   	  <input type="password" name="password_1">
   	</div>
   	<div class="input-group">
-  	  <label>Confirm password</label>
+  	  <label>Next Service Date</label>
   	  <input type="password" name="password_2">
   	</div>
   	<div class="input-group">
-  	  <button type="submit" class="btn" name="reg_user">Register</button>
+  	  <button type="submit" class="btn" name="reg_user">Submit</button>
   	</div>
   	<p>
-  		Already a member? <a href="login.php">Sign in</a>
+  		Click here to see all vehicle details <a href="display.php">View Detials</a>
   	</p>
   </form>
 </body>
