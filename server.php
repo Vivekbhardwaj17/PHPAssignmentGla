@@ -58,6 +58,28 @@ if (isset($_POST['reg_user'])) {
   	header('location: index.php');
   }
 }
+
+
+
+if(isset($_POST['details_sub'])){
+ 
+    $vnum=$_POST['vnum'];
+    $vcname=$_POST['vcname'];
+	$vmodal=$_POST['vmodal'];
+	$lsd = $_POST['lsd'];
+    $dname=$_POST['dname'];
+    $nsd = $_POST['nsd'];  
+ 
+ 
+    if($vnum!=""&$vcname!=""&$vmodal!=""&$lsd!=""&$dname!=""&$nsd!=""){
+        $quer="INSERT INTO details VALUES ('$vmodal','$vcname','$dname','$nsd','$vnum','$lsd')";
+mysqli_query($db,$quer);
+    echo "<font color='green'>Details Added Successfully";}
+    else 
+    echo"<font color='red'>Details Not Added";
+
+}
+
 if (isset($_POST['login_user'])) {
   $username = mysqli_real_escape_string($db, $_POST['username']);
   $password = mysqli_real_escape_string($db, $_POST['password']);
